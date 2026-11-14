@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SpendWise</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+
+            background:
+                radial-gradient(circle at top, #ffffff 0%, #eef3ff 35%, #07152f 100%);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 50px;
+
+            background: rgba(255, 255, 255, 0.88);
+
+            border: 1px solid rgba(255, 255, 255, 0.8);
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.25);
+
+            backdrop-filter: blur(10px);
+        }
+
+        .left {
+            width: 50%;
+        }
+
+        .brand {
+            font-size: 70px;
+            font-weight: bold;
+            margin: 0;
+            letter-spacing: -3px;
+        }
+
+        .spend {
+            color: #080808;
+        }
+
+        .wise {
+            color: #191237;
+        }
+
+        .line {
+            width: 90px;
+            height: 5px;
+
+            background: #191237;
+
+            border-radius: 10px;
+
+            margin: 20px 0;
+        }
+
+        .tagline {
+            color: #051b53;
+
+            font-size: 23px;
+
+            font-style: italic;
+
+            margin-bottom: 18px;
+        }
+
+        .description {
+            color: #555;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+
+            max-width: 500px;
+        }
+
+        .start-button {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            text-decoration: none;
+
+            background: #12122a;
+
+            color: white;
+
+            padding: 14px 45px;
+
+            border-radius: 10px;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            border: 2px solid #12122a;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 8px 20px rgba(18, 18, 42, 0.3);
+        }
+
+        .start-button:hover {
+            background: white;
+
+            color: #12122a;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 25px rgba(18, 18, 42, 0.35);
+        }
+
+        .right {
+            width: 45%;
+
+            text-align: center;
+        }
+
+        .image-box {
+            position: relative;
+
+            display: inline-block;
+
+            padding: 25px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(25, 18, 55, 0.12),
+                    transparent 65%
+                );
+        }
+
+        .image-box::before {
+            content: "";
+
+            position: absolute;
+
+            width: 330px;
+            height: 330px;
+
+            border: 2px dashed rgba(25, 18, 55, 0.3);
+
+            border-radius: 50%;
+
+            top: 10px;
+            left: 10px;
+
+            animation: rotate 18s linear infinite;
+        }
+
+        .main-image {
+            width: 300px;
+            height: 300px;
+
+            object-fit: contain;
+
+            display: block;
+
+            position: relative;
+
+            transition: 0.5s;
+
+            filter: drop-shadow(
+                0 20px 20px rgba(0, 0, 0, 0.25)
+            );
+        }
+
+        .main-image:hover {
+            transform: scale(1.08) rotate(2deg);
+        }
+
+        @keyframes rotate {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        .features {
+            display: flex;
+
+            gap: 12px;
+
+            margin-top: 25px;
+        }
+
+        .feature {
+            padding: 10px 15px;
+
+            background: #f0f3fa;
+
+            border-radius: 10px;
+
+            color: #191237;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        @media (max-width: 850px) {
+
+            body {
+                overflow: auto;
+                padding: 30px 0;
+            }
+
+            .container {
+                flex-direction: column-reverse;
+
+                width: 92%;
+
+                padding: 40px 25px;
+
+                text-align: center;
+            }
+
+            .left,
+            .right {
+                width: 100%;
+            }
+
+            .right {
+                margin-bottom: 25px;
+            }
+
+            .brand {
+                font-size: 55px;
+            }
+
+            .line {
+                margin: 20px auto;
+            }
+
+            .description {
+                margin: auto;
+            }
+
+            .features {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .image-box::before {
+                width: 300px;
+                height: 300px;
+            }
+
+        }
+
+        @media (max-width: 500px) {
+
+            .container {
+                padding: 30px 18px;
+            }
+
+            .brand {
+                font-size: 43px;
+            }
+
+            .tagline {
+                font-size: 19px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .main-image {
+                width: 240px;
+                height: 240px;
+            }
+
+            .image-box::before {
+                width: 245px;
+                height: 245px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="left">
+
+            <h1 class="brand">
+                <span class="spend">Spend</span><span class="wise">Wise</span>
+            </h1>
+
+            <div class="line"></div>
+
+            <div class="tagline">
+                Take Control Of Your Money
+            </div>
+
+            <p class="description">
+                Track your income and expenses easily,
+                understand your spending habits, and
+                manage your money smarter with SpendWise.
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+                    💰 Track Expenses
+                </div>
+
+                <div class="feature">
+                    📊 View Reports
+                </div>
+
+                <div class="feature">
+                    🎯 Save Better
+                </div>
+
+            </div>
+
+            <a href="home.html" class="start-button">
+                Get Started →
+            </a>
+
+        </div>
+
+
+        <div class="right">
+
+            <div class="image-box">
+
+                <img
+                    src="—Pngtree—3d isolated render of a_20808822.png"
+                    class="main-image"
+                    alt="SpendWise"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
